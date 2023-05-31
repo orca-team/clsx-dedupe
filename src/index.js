@@ -28,9 +28,12 @@ function toVal(mix) {
 
 export function clsx() {
 	var i=0, tmp, x, str='';
+	var cache = {};
 	while (i < arguments.length) {
 		if (tmp = arguments[i++]) {
 			if (x = toVal(tmp)) {
+				if (cache[x]) continue;
+				cache[x] = true;
 				str && (str += ' ');
 				str += x
 			}

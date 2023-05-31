@@ -1,13 +1,17 @@
 {
-  "name": "clsx",
+  "name": "@orca-fe/clsx-dedupe",
   "version": "1.2.1",
-  "repository": "lukeed/clsx",
-  "description": "A tiny (228B) utility for constructing className strings conditionally.",
+  "repository": "orca-team/clsx-dedupe",
+  "description": "`clsx` dedupe version",
   "module": "dist/clsx.m.js",
   "unpkg": "dist/clsx.min.js",
   "main": "dist/clsx.js",
   "types": "clsx.d.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "author": {
     "name": "Luke Edwards",
     "email": "luke.edwards05@gmail.com",
@@ -18,6 +22,7 @@
   },
   "scripts": {
     "build": "node bin",
+    "prepublishOnly": "npm run build",
     "test": "uvu -r esm test"
   },
   "files": [
@@ -27,7 +32,8 @@
   "keywords": [
     "classes",
     "classname",
-    "classnames"
+    "classnames",
+    "dedupe"
   ],
   "devDependencies": {
     "esm": "3.2.25",
